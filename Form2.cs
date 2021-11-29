@@ -13,9 +13,16 @@ namespace WindowsForm
 {
     public partial class Form2 : Form
     {
+        string res;
         public Form2()
         {
             InitializeComponent();
+          
+        }
+        
+        public void pass(string qs)
+        {
+            res = qs;
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -36,6 +43,7 @@ namespace WindowsForm
         private void button1_Click(object sender, EventArgs e)
         {
             Form5 thongtintacgia = new Form5();
+            thongtintacgia.pass(res);
             thongtintacgia.Show();
             this.Hide();
         }
