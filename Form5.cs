@@ -49,7 +49,7 @@ namespace WindowsForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("UPDATE TACGIA SET TACGIA.Hoten = '"+textBox1.Text+"', TACGIA.Email = '"+textBox2.Text+"' WHERE TACGIA.NHAKHOAHOC_ScientistID = '"+res +"'" , conn);
+            SqlCommand cmd = new SqlCommand("UPDATE TACGIA SET TACGIA.Hoten = '"+textBox1.Text+"', TACGIA.Email = '"+textBox2.Text+ "',  TACGIA.Diachi = '" + textBox3.Text + "',  TACGIA.NgheNghiep = '" + textBox4.Text + "',  TACGIA.Coquancongtac = '" + textBox5.Text + "' WHERE TACGIA.NHAKHOAHOC_ScientistID = '" + res +"'" , conn);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sd.Fill(dt);
