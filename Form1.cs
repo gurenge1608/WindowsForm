@@ -63,7 +63,6 @@ namespace WindowsForm
                             Form4 nhaphanbien = new Form4();
                             nhaphanbien.Show();
                             this.Hide();
-                            djsadsa;
                         }
                     }
                 }
