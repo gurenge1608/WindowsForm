@@ -30,7 +30,7 @@ namespace WindowsForm
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-I0FK0UC\\TANTRAN;Initial Catalog=TANTRAN;Integrated Security=True");
+            SqlConnection conn = new SqlConnection("Data Source=KEN;Initial Catalog=HCSDL2;Integrated Security=True");
             SqlCommand cmd = new SqlCommand("select * from login where username='"+txtUser.Text+"' and password='"+txtPass.Text+"'", conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -42,7 +42,7 @@ namespace WindowsForm
                 {
                     if (dt.Rows[i]["usertype"].ToString() == cmbItemValue)
                     {
-                        MessageBox.Show("you are log in as " + dt.Rows[i][2]);
+                        MessageBox.Show("You are log in as " + dt.Rows[i][2]);
                         if (comboBox1.SelectedIndex == 0)
                         {
                             Form2 tacgia = new Form2();

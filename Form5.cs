@@ -26,7 +26,7 @@ namespace WindowsForm
             res = qs;
         }
 
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-I0FK0UC\\TANTRAN;Initial Catalog=TANTRAN;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=KEN;Initial Catalog=HCSDL2;Integrated Security=True");
 
         void BindData()
         {
@@ -45,6 +45,16 @@ namespace WindowsForm
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("UPDATE TACGIA SET TACGIA.Hoten = '"+textBox1.Text+"', TACGIA.Email = '"+textBox2.Text+"' WHERE TACGIA.NHAKHOAHOC_ScientistID = '"+res +"'" , conn);
+            SqlDataAdapter sd = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            dataGridView2.DataSource = dt;
+            BindData();
         }
     }
 }

@@ -45,7 +45,6 @@ namespace WindowsForm
             Form5 thongtintacgia = new Form5();
             thongtintacgia.pass(res);
             thongtintacgia.Show();
-            this.Hide();
         }
     }
 }
