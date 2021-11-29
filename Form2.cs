@@ -32,7 +32,9 @@ namespace WindowsForm
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Form6 thongtinbaibao = new Form6();
+            thongtinbaibao.pass(res);
+            thongtinbaibao.Show();
         }
 
         private void button10_Click(object sender, EventArgs e)
