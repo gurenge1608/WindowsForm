@@ -35,13 +35,9 @@ namespace WindowsForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source=KEN;Initial Catalog=HCSDL;Integrated Security=True");
-            SqlCommand cmd = new SqlCommand("select * from TACGIA where username='" + txtUser.Text + "' and password='" + txtPass.Text + "'", conn);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            string cmbItemValue = comboBox1.SelectedItem.ToString();
-            sda.Fill(dt);
-            dsadsada
+            Form5 thongtintacgia = new Form5();
+            thongtintacgia.Show();
+            this.Hide();
         }
     }
 }

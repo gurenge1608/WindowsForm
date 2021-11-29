@@ -16,7 +16,6 @@ namespace WindowsForm
         public Form1()
         {
             InitializeComponent();
-            
         }
 
 
@@ -31,8 +30,8 @@ namespace WindowsForm
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-I0FK0UC\\TANTRAN;Initial Catalog=logintest;Integrated Security=True");
-            SqlCommand cmd = new SqlCommand("select * from login where username='" + txtUser.Text + "' and password='" + txtPass.Text + "'", conn);
+            SqlConnection conn = new SqlConnection("Data Source=KEN;Initial Catalog=HCSDL2;Integrated Security=True");
+            SqlCommand cmd = new SqlCommand("select * from login where username='"+txtUser.Text+"' and password='"+txtPass.Text+"'", conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             string cmbItemValue = comboBox1.SelectedItem.ToString();
