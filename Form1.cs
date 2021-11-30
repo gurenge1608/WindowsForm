@@ -54,6 +54,7 @@ namespace WindowsForm
                         else if (comboBox1.SelectedIndex == 1)
                         {
                             Form3 banbientap = new Form3();
+                            
                             banbientap.Show();
                             this.Hide();
 
@@ -61,6 +62,7 @@ namespace WindowsForm
                         else
                         {
                             Form4 nhaphanbien = new Form4();
+                            nhaphanbien.pass(txtUser.Text.ToString());
                             nhaphanbien.Show();
                             this.Hide();
                         }
