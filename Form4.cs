@@ -28,7 +28,9 @@ namespace WindowsForm
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Form15 danhsachcactacgia = new Form15();
+            danhsachcactacgia.pass(res);
+            danhsachcactacgia.Show();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -48,6 +50,20 @@ namespace WindowsForm
             Form12 capnhatbaiphanbien = new Form12();
             capnhatbaiphanbien.pass(res);
             capnhatbaiphanbien.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form13 danhsachbaibaodangphanbien = new Form13();
+            danhsachbaibaodangphanbien.pass(res);
+            danhsachbaibaodangphanbien.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form14 danhsachbaibaotheotacgia = new Form14();
+            danhsachbaibaotheotacgia.pass(res);
+            danhsachbaibaotheotacgia.Show();
         }
     }
 }

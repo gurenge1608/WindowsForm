@@ -23,7 +23,7 @@ namespace WindowsForm
 
         void BindData()
         {
-            SqlCommand cmd = new SqlCommand("select BPBID, Danhchotacgia, Danhchobanbientap, Noidung, Ngaythongbaodentacgia, Cacchitietkhac, BAIBAO_NewsID, PBID FROM BAIPHANBIEN JOIN (THUCHIENPHANBIEN JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) ON BAIPHANBIEN_BPBID = BPBID WHERE NHAKHOAHOC_ScientistID = '"+res+"'", conn);
+            SqlCommand cmd = new SqlCommand("select BPBID, Danhchotacgia, Danhchobanbientap, Noidung, Ngaythongbaodentacgia, Cacchitietkhac, BAIBAO_NewsID, PBID FROM BAIPHANBIEN JOIN (THUCHIENPHANBIEN JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) ON BAIPHANBIEN_BPBID = BPBID WHERE NHAKHOAHOC_ScientistID = '" + res + "'", conn);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sd.Fill(dt);
@@ -37,6 +37,24 @@ namespace WindowsForm
         {
             BindData();
         }
+        public bool checkcolumn(string str) {
+            SqlCommand cmd = new SqlCommand("select BPBID, Danhchotacgia, Danhchobanbientap, Noidung, Ngaythongbaodentacgia, Cacchitietkhac, BAIBAO_NewsID, PBID FROM BAIPHANBIEN JOIN (THUCHIENPHANBIEN JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) ON BAIPHANBIEN_BPBID = BPBID WHERE NHAKHOAHOC_ScientistID = '" + res + "'", conn);
+            SqlDataAdapter sd = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (str == dr[0].ToString())
+                {
+                    return true;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return false;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             int check = 1;
@@ -46,10 +64,15 @@ namespace WindowsForm
                 check = 0;
             }
             else { check = 1; }
+
             SqlCommand cmd = new SqlCommand("UPDATE BAIPHANBIEN SET BAIPHANBIEN.Danhchotacgia = '" + textBox1.Text + "', BAIPHANBIEN.Danhchobanbientap = '" + textBox2.Text + "',  BAIPHANBIEN.Noidung = '" + textBox3.Text + "',  BAIPHANBIEN.Cacchitietkhac = '" + textBox4.Text + "' WHERE BAIPHANBIEN.BPBID = '" + textBox5.Text+"'", conn);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
-            if (check == 1) sd.Fill(dt);
+            if (check == 1 && checkcolumn(textBox5.Text)) { sd.Fill(dt); }
+            else
+            {
+                MessageBox.Show("ID không hợp lệ !!!!!!!!!!!!!!!!!!");
+            }
             dataGridView1.DataSource = dt;
             BindData();
         }
