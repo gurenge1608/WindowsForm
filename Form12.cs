@@ -46,7 +46,6 @@ namespace WindowsForm
                 check = 0;
             }
             else { check = 1; }
-            for (int i = 0; i < ; i++)
             SqlCommand cmd = new SqlCommand("UPDATE BAIPHANBIEN SET BAIPHANBIEN.Danhchotacgia = '" + textBox1.Text + "', BAIPHANBIEN.Danhchobanbientap = '" + textBox2.Text + "',  BAIPHANBIEN.Noidung = '" + textBox3.Text + "',  BAIPHANBIEN.Cacchitietkhac = '" + textBox4.Text + "' WHERE BAIPHANBIEN.BPBID = '" + textBox5.Text+"'", conn);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
