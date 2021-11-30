@@ -42,5 +42,12 @@ namespace WindowsForm
             capnhatthongtinnhaphanbien.pass(res);
             capnhatthongtinnhaphanbien.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form12 capnhatbaiphanbien = new Form12();
+            capnhatbaiphanbien.pass(res);
+            capnhatbaiphanbien.Show();
+        }
     }
 }
