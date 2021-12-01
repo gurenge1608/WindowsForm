@@ -54,7 +54,7 @@ namespace WindowsForm
                         else if (comboBox1.SelectedIndex == 1)
                         {
                             Form3 banbientap = new Form3();
-                            
+                            banbientap.pass(txtUser.Text.ToString());
                             banbientap.Show();
                             this.Hide();
 

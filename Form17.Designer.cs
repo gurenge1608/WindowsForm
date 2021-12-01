@@ -1,6 +1,6 @@
 ﻿namespace WindowsForm
 {
-    partial class Form15
+    partial class Form17
     {
         /// <summary>
         /// Required designer variable.
@@ -35,20 +35,20 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 86);
+            this.dataGridView1.Location = new System.Drawing.Point(30, 84);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(910, 42);
+            this.dataGridView1.Size = new System.Drawing.Size(735, 339);
             this.dataGridView1.TabIndex = 0;
             // 
-            // Form15
+            // Form17
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 150);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form15";
-            this.Text = "Form15";
-            this.Load += new System.EventHandler(this.Form15_Load);
+            this.Name = "Form17";
+            this.Text = "Form17";
+            this.Load += new System.EventHandler(this.Form17_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

@@ -65,5 +65,40 @@ namespace WindowsForm
             danhsachbaibaotheotacgia.pass(res);
             danhsachbaibaotheotacgia.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form16 ketquaphanbien = new Form16();
+            ketquaphanbien.pass(res);
+            ketquaphanbien.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form17 phanbiennhieunhat = new Form17();
+            phanbiennhieunhat.pass(res);
+            phanbiennhieunhat.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form18 ketquatotnhat = new Form18();
+            ketquatotnhat.pass(res);
+            ketquatotnhat.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Form19 ketquathapnhat = new Form19();
+            ketquathapnhat.pass(res);
+            ketquathapnhat.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form20 ketquathapnhat = new Form20();
+            ketquathapnhat.pass(res);
+            ketquathapnhat.Show();
+        }
     }
 }
