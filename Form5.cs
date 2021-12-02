@@ -46,7 +46,25 @@ namespace WindowsForm
         {
 
         }
-
+        public bool checkcolumn(string str)
+        {
+            SqlCommand cmd = new SqlCommand("select * from TACGIA where TACGIA.NHAKHOAHOC_ScientistID = '" + res + "'", conn);
+            SqlDataAdapter sd = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (str == dr[0].ToString())
+                {
+                    return true;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return false;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             int check = 1;

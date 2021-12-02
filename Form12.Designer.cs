@@ -96,7 +96,7 @@
             this.label8.BackColor = System.Drawing.SystemColors.Control;
             this.label8.Font = new System.Drawing.Font("Microsoft New Tai Lue", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(205, 24);
+            this.label8.Location = new System.Drawing.Point(226, 24);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(322, 35);
             this.label8.TabIndex = 24;

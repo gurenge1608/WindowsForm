@@ -47,10 +47,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label1.BackColor = System.Drawing.Color.AliceBlue;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.IndianRed;
-            this.label1.Location = new System.Drawing.Point(186, 9);
+            this.label1.ForeColor = System.Drawing.Color.Indigo;
+            this.label1.Location = new System.Drawing.Point(176, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(410, 31);
             this.label1.TabIndex = 1;
@@ -59,25 +59,26 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 98);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(54, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.Size = new System.Drawing.Size(163, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nhap ID bai bao: ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(182, 95);
+            this.textBox1.Location = new System.Drawing.Point(224, 110);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(198, 20);
             this.textBox1.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(413, 95);
+            this.button1.Location = new System.Drawing.Point(452, 110);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(292, 44);
+            this.button1.Size = new System.Drawing.Size(253, 20);
             this.button1.TabIndex = 4;
             this.button1.Text = "Xem thông tin tác giả và trạng thái của bài báo";
             this.button1.UseVisualStyleBackColor = true;

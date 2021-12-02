@@ -38,7 +38,25 @@ namespace WindowsForm
         {
 
         }
-
+        public bool checkcolumn(string str)
+        {
+            SqlCommand cmd = new SqlCommand("select NewsID, Tomtat, Tieude, Filebaocao from BAIBAO JOIN ( NHAKHOAHOC JOIN TACGIA on NHAKHOAHOC_ScientistID = ScientistID) on TACGIA_AuthorID = AuthorID where ScientistID = '" + res + "'", conn);
+            SqlDataAdapter sd = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (str == dr[0].ToString())
+                {
+                    return true;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return false;
+        }
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
@@ -56,7 +74,7 @@ namespace WindowsForm
             SqlCommand cmd = new SqlCommand("UPDATE BAIBAO SET BAIBAO.Tomtat = '" + textBox1.Text + "', BAIBAO.Tieude = '" + textBox2.Text + "',  BAIBAO.Filebaocao = '" + textBox3.Text + "' WHERE BAIBAO.NewsID = '"+textBox4.Text+"'", conn);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
-            if (check == 1) sd.Fill(dt);
+            if (check == 1 && checkcolumn(textBox4.Text)) sd.Fill(dt);
             dataGridView1.DataSource = dt;
             BindData();
         }

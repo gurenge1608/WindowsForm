@@ -38,14 +38,15 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(23, 77);
+            this.button1.Location = new System.Drawing.Point(20, 128);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(204, 24);
+            this.button1.Size = new System.Drawing.Size(273, 42);
             this.button1.TabIndex = 0;
             this.button1.Text = "Cập nhật thông tin cá nhân";
             this.button1.UseVisualStyleBackColor = true;
@@ -53,10 +54,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(300, 77);
+            this.button2.Location = new System.Drawing.Point(342, 128);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(204, 24);
+            this.button2.Size = new System.Drawing.Size(270, 42);
             this.button2.TabIndex = 1;
             this.button2.Text = "Cập nhật bài phản biện";
             this.button2.UseVisualStyleBackColor = true;
@@ -64,10 +65,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(23, 149);
+            this.button5.Location = new System.Drawing.Point(20, 200);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(204, 25);
+            this.button5.Size = new System.Drawing.Size(273, 39);
             this.button5.TabIndex = 5;
             this.button5.Text = "Xem danh sách các bài báo theo loại\r\n";
             this.button5.UseVisualStyleBackColor = true;
@@ -75,10 +76,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(23, 215);
+            this.button3.Location = new System.Drawing.Point(22, 264);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(258, 25);
+            this.button3.Size = new System.Drawing.Size(271, 45);
             this.button3.TabIndex = 6;
             this.button3.Text = "Tác giả có nhiều bài báo nhất mình đã phản biện";
             this.button3.UseVisualStyleBackColor = true;
@@ -86,10 +87,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(276, 149);
+            this.button4.Location = new System.Drawing.Point(342, 200);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(228, 25);
+            this.button4.Size = new System.Drawing.Size(270, 39);
             this.button4.TabIndex = 7;
             this.button4.Text = "Xem danh sách các bài báo theo tác giả\r\n";
             this.button4.UseVisualStyleBackColor = true;
@@ -97,9 +98,9 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(310, 215);
+            this.button6.Location = new System.Drawing.Point(342, 264);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(194, 23);
+            this.button6.Size = new System.Drawing.Size(270, 45);
             this.button6.TabIndex = 8;
             this.button6.Text = "Xem kết quả phản biện các bài báo";
             this.button6.UseVisualStyleBackColor = true;
@@ -107,9 +108,9 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(25, 263);
+            this.button7.Location = new System.Drawing.Point(22, 338);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(219, 27);
+            this.button7.Size = new System.Drawing.Size(271, 51);
             this.button7.TabIndex = 9;
             this.button7.Text = "3 năm có số bài báo phản biện nhiều nhất";
             this.button7.UseVisualStyleBackColor = true;
@@ -117,9 +118,9 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(259, 264);
+            this.button8.Location = new System.Drawing.Point(342, 338);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(245, 26);
+            this.button8.Size = new System.Drawing.Size(270, 51);
             this.button8.TabIndex = 10;
             this.button8.Text = "3 bài báo đã phản biện có kết quả tốt nhất (acceptance). ";
             this.button8.UseVisualStyleBackColor = true;
@@ -127,9 +128,9 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(25, 320);
+            this.button9.Location = new System.Drawing.Point(22, 406);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(251, 39);
+            this.button9.Size = new System.Drawing.Size(271, 52);
             this.button9.TabIndex = 11;
             this.button9.Text = "3 bài báo đã phản biện có kết quả thấp nhất ";
             this.button9.UseVisualStyleBackColor = true;
@@ -137,19 +138,32 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(332, 320);
+            this.button10.Location = new System.Drawing.Point(342, 406);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(172, 74);
+            this.button10.Size = new System.Drawing.Size(270, 52);
             this.button10.TabIndex = 12;
             this.button10.Text = "Trung bình số bài báo mỗi năm đã phản biện";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label1.Location = new System.Drawing.Point(219, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(202, 31);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Nhà phản biện";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 484);
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ClientSize = new System.Drawing.Size(665, 484);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -164,6 +178,7 @@
             this.Name = "Form4";
             this.Text = "Form4";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -179,5 +194,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label1;
     }
 }
