@@ -49,8 +49,7 @@ namespace WindowsForm
                 check = 0;
             }
             else { check = 1; }
-            SqlCommand cmd = new SqlCommand("SELECT BAIBAO_NewsID, tacgiasangtac, Phanbien, Phanhoiphanbien, Hoantatphanbien, Xuatban, Dadang" +
-            "  FROM BAIBAO_TACGIASANGTAC JOIN BAIBAO ON BAIBAO_NewsID = NewsID WHERE BAIBAO_NewsID = '"+textBox1.Text+"'", conn);
+            SqlCommand cmd = new SqlCommand("SELECT SANGTAC_ID, Email, Diachi, Coquancongtac, Hoten FROM (TACGIASANGTAC JOIN SANGTAC ON SANGTAC_ID = SANGTAC_IDREF) JOIN BAIBAO ON BAIBAO_NewsID = NewsID WHERE NewsID = '"+textBox1.Text+"'", conn);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             if (check == 1) sd.Fill(dt);

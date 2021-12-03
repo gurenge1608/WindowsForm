@@ -23,7 +23,7 @@ namespace WindowsForm
 
         void BindData()
         {
-            SqlCommand cmd = new SqlCommand("select TOP 3 tacgiasangtac, NewsID, Tomtat, Tieude, Filebaocao, TACGIA_AuthorID, Tuchoi from (((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN BAIBAO_TACGIASANGTAC ON BAIBAO_TACGIASANGTAC.BAIBAO_NewsID = BAIBAO.NewsID where NHAKHOAHOC_ScientistID = '"+res+"' AND Tuchoi = 1;", conn);
+            SqlCommand cmd = new SqlCommand("select TOP 3 NewsID, Tomtat, Tieude, Filebaocao, TACGIA_AuthorID, Tuchoi from (((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) where NHAKHOAHOC_ScientistID = '"+res+"' AND Tuchoi = 1;", conn);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sd.Fill(dt);

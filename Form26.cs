@@ -23,7 +23,7 @@ namespace WindowsForm
 
         void BindData()
         {
-            SqlCommand cmd = new SqlCommand("select NewsID, Tomtat, Tieude, TACGIA_AuthorID FROM BAIBAO", conn);
+            SqlCommand cmd = new SqlCommand("select NewsID, Tomtat, Tieude, Filebaocao, Ngaygui, SANGTAC_IDREF FROM BAIBAO JOIN SANGTAC ON BAIBAO_NewsID = NewsID", conn);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sd.Fill(dt);
@@ -46,7 +46,7 @@ namespace WindowsForm
             }
             else
             {
-                SqlCommand cmd = new SqlCommand("select * FROM BAIBAO WHERE TACGIA_AuthorID = '"+textBox1.Text+"' AND Xuatban = 1", conn);
+                SqlCommand cmd = new SqlCommand("select NewsID, Tomtat, Tieude, Filebaocao, Ngaygui, SANGTAC_IDREF FROM BAIBAO JOIN SANGTAC ON BAIBAO_NewsID = NewsID WHERE SANGTAC_IDREF = '" + textBox1.Text+"' AND Xuatban = 1", conn);
                 SqlDataAdapter sd = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sd.Fill(dt);
@@ -62,7 +62,7 @@ namespace WindowsForm
             }
             else
             {
-                SqlCommand cmd = new SqlCommand("select * FROM BAIBAO WHERE TACGIA_AuthorID = '" + textBox1.Text + "' AND Dadang = 1", conn);
+                SqlCommand cmd = new SqlCommand("select NewsID, Tomtat, Tieude, Filebaocao, Ngaygui, SANGTAC_IDREF FROM BAIBAO JOIN SANGTAC ON BAIBAO_NewsID = NewsID WHERE SANGTAC_IDREF = '" + textBox1.Text+"' AND Dadang = 1", conn);
                 SqlDataAdapter sd = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sd.Fill(dt);

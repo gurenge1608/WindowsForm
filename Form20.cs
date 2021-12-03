@@ -23,7 +23,7 @@ namespace WindowsForm
 
         void BindData()
         {
-            SqlCommand cmd = new SqlCommand("SELECT 1.0*SUM(Trungbinh)/5 AS TRUNGBINH FROM(SELECT COUNT(YEAR(thoigianthuchien)) AS Trungbinh FROM(((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID = BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN BAIBAO_TACGIASANGTAC ON BAIBAO_TACGIASANGTAC.BAIBAO_NewsID = BAIBAO.NewsID where NHAKHOAHOC_ScientistID = '"+res+"' AND DATEDIFF(YEAR, Thoigianthuchien, CURRENT_TIMESTAMP) <= 5 AND(Hoantatphanbien = 1 OR Xuatban = 1 OR Dadang = 1)  GROUP BY(YEAR(thoigianthuchien))) as counts", conn);
+            SqlCommand cmd = new SqlCommand("SELECT 1.0*SUM(Trungbinh)/5 AS TRUNGBINH FROM(SELECT COUNT(YEAR(thoigianthuchien)) AS Trungbinh FROM(((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID = BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) where NHAKHOAHOC_ScientistID = '"+res+"' AND DATEDIFF(YEAR, Thoigianthuchien, CURRENT_TIMESTAMP) <= 5 AND(Hoantatphanbien = 1 OR Xuatban = 1 OR Dadang = 1)  GROUP BY(YEAR(thoigianthuchien))) as counts", conn);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sd.Fill(dt);

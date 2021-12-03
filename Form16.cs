@@ -27,7 +27,7 @@ namespace WindowsForm
         }
         void BindData()
         {
-            SqlCommand cmd = new SqlCommand("select tacgiasangtac, NewsID, Tomtat, Tieude, Filebaocao, TACGIA_AuthorID, Chapnhan, Tuchoi, Suadoiit, Suadoinhieu from (((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN BAIBAO_TACGIASANGTAC ON BAIBAO_TACGIASANGTAC.BAIBAO_NewsID = BAIBAO.NewsID where (NHAKHOAHOC_ScientistID = '"+res+"' AND DATEDIFF(YEAR, Thoigianthuchien, CURRENT_TIMESTAMP) < 1)", conn);
+            SqlCommand cmd = new SqlCommand("select NewsID, Tomtat, Tieude, Filebaocao, TACGIA_AuthorID, Chapnhan, Tuchoi, Suadoiit, Suadoinhieu from (((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) where (NHAKHOAHOC_ScientistID = '"+res+"' AND DATEDIFF(YEAR, Thoigianthuchien, CURRENT_TIMESTAMP) < 1)", conn);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sd.Fill(dt);

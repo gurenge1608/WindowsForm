@@ -28,7 +28,7 @@ namespace WindowsForm
 
         void BindData()
         {
-            SqlCommand cmd = new SqlCommand("select tacgiasangtac, NewsID, Tomtat, Tieude, Filebaocao, TACGIA_AuthorID, ngaygui from (((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN BAIBAO_TACGIASANGTAC ON BAIBAO_TACGIASANGTAC.BAIBAO_NewsID = BAIBAO.NewsID where NHAKHOAHOC_ScientistID = '" + res + "'", conn);
+            SqlCommand cmd = new SqlCommand("select NewsID, Tomtat, Tieude, Filebaocao, SANGTAC_ID, ngaygui from ((((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN SANGTAC ON SANGTAC.BAIBAO_NewsID = BAIBAO.NewsID) JOIN TACGIASANGTAC ON SANGTAC_IDREF = SANGTAC_ID where NHAPHANBIEN.NHAKHOAHOC_ScientistID = '" + res + "'", conn);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sd.Fill(dt);
@@ -42,7 +42,7 @@ namespace WindowsForm
 
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("select tacgiasangtac, NewsID, Tomtat, Tieude, Filebaocao, TACGIA_AuthorID, ngaygui from (((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN BAIBAO_TACGIASANGTAC ON BAIBAO_TACGIASANGTAC.BAIBAO_NewsID = BAIBAO.NewsID where (NHAKHOAHOC_ScientistID = '" + res + "' AND (Phanbien = 1 OR Phanhoiphanbien = 1))", conn);
+            SqlCommand cmd = new SqlCommand("select NewsID, Tomtat, Tieude, Filebaocao, SANGTAC_ID, ngaygui from ((((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN SANGTAC ON SANGTAC.BAIBAO_NewsID = BAIBAO.NewsID) JOIN TACGIASANGTAC ON SANGTAC_IDREF = SANGTAC_ID where (NHAPHANBIEN.NHAKHOAHOC_ScientistID = '" + res + "' AND (Phanbien = 1 OR Phanhoiphanbien = 1))", conn);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sd.Fill(dt);
@@ -60,7 +60,7 @@ namespace WindowsForm
             {
                 if (radioButton5.Checked)
                 {
-                    SqlCommand cmd = new SqlCommand("select tacgiasangtac, NewsID, Tomtat, Tieude, Filebaocao, TACGIA_AuthorID, ngaygui from (((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN BAIBAO_TACGIASANGTAC ON BAIBAO_TACGIASANGTAC.BAIBAO_NewsID = BAIBAO.NewsID where (NHAKHOAHOC_ScientistID = '" + res + "' AND (Phanbien = 1 OR Phanhoiphanbien = 1) AND BAIBAO.TACGIA_AuthorID = '"+textBox1.Text+"')", conn);
+                    SqlCommand cmd = new SqlCommand("select NewsID, Tomtat, Tieude, Filebaocao, SANGTAC_ID, ngaygui from ((((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN SANGTAC ON SANGTAC.BAIBAO_NewsID = BAIBAO.NewsID) JOIN TACGIASANGTAC ON SANGTAC_IDREF = SANGTAC_ID where (NHAPHANBIEN.NHAKHOAHOC_ScientistID = '" + res + "' AND (Phanbien = 1 OR Phanhoiphanbien = 1) AND SANGTAC_ID = '" + textBox1.Text+"')", conn);
                     SqlDataAdapter sd = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     sd.Fill(dt);
@@ -68,7 +68,7 @@ namespace WindowsForm
                 }
                 else if (radioButton6.Checked)
                 {
-                    SqlCommand cmd = new SqlCommand("select tacgiasangtac, NewsID, Tomtat, Tieude, Filebaocao, TACGIA_AuthorID, ngaygui from (((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN BAIBAO_TACGIASANGTAC ON BAIBAO_TACGIASANGTAC.BAIBAO_NewsID = BAIBAO.NewsID where (NHAKHOAHOC_ScientistID = '" + res + "' AND (Hoantatphanbien = 1 OR Xuatban = 1 OR Dadang =1) AND DATEDIFF(YEAR, Thoigianthuchien, CURRENT_TIMESTAMP) <= 3 AND BAIBAO.TACGIA_AuthorID = '" + textBox1.Text + "')", conn);
+                    SqlCommand cmd = new SqlCommand("select NewsID, Tomtat, Tieude, Filebaocao, SANGTAC_ID, ngaygui from ((((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN SANGTAC ON SANGTAC.BAIBAO_NewsID = BAIBAO.NewsID) JOIN TACGIASANGTAC ON SANGTAC_IDREF = SANGTAC_ID where (NHAPHANBIEN.NHAKHOAHOC_ScientistID = '" + res + "' AND (Hoantatphanbien = 1 OR Xuatban = 1 OR Dadang =1) AND DATEDIFF(YEAR, Thoigianthuchien, CURRENT_TIMESTAMP) <= 3 AND SANGTAC_ID = '" + textBox1.Text + "')", conn);
                     SqlDataAdapter sd = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     sd.Fill(dt);
@@ -76,7 +76,7 @@ namespace WindowsForm
                 }
                 else
                 {
-                    SqlCommand cmd = new SqlCommand("select tacgiasangtac, NewsID, Tomtat, Tieude, Filebaocao, TACGIA_AuthorID, ngaygui from (((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN BAIBAO_TACGIASANGTAC ON BAIBAO_TACGIASANGTAC.BAIBAO_NewsID = BAIBAO.NewsID where (NHAKHOAHOC_ScientistID = '" + res + "' AND BAIBAO.TACGIA_AuthorID = '" + textBox1.Text + "')", conn);
+                    SqlCommand cmd = new SqlCommand("select NewsID, Tomtat, Tieude, Filebaocao, SANGTAC_ID, ngaygui from ((((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN SANGTAC ON SANGTAC.BAIBAO_NewsID = BAIBAO.NewsID) JOIN TACGIASANGTAC ON SANGTAC_IDREF = SANGTAC_ID where (NHAPHANBIEN.NHAKHOAHOC_ScientistID = '" + res + "' AND SANGTAC_ID = '" + textBox1.Text + "')", conn);
                     SqlDataAdapter sd = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     sd.Fill(dt);
@@ -91,7 +91,7 @@ namespace WindowsForm
 
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("select tacgiasangtac, NewsID, Tomtat, Tieude, Filebaocao, TACGIA_AuthorID, ngaygui from (((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN BAIBAO_TACGIASANGTAC ON BAIBAO_TACGIASANGTAC.BAIBAO_NewsID = BAIBAO.NewsID where (NHAKHOAHOC_ScientistID = '" + res + "' AND (Hoantatphanbien = 1 OR Xuatban = 1 OR Dadang =1) AND DATEDIFF(YEAR, Thoigianthuchien, CURRENT_TIMESTAMP) <= 3)", conn);
+            SqlCommand cmd = new SqlCommand("select NewsID, Tomtat, Tieude, Filebaocao, SANGTAC_ID, ngaygui from ((((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN SANGTAC ON SANGTAC.BAIBAO_NewsID = BAIBAO.NewsID) JOIN TACGIASANGTAC ON SANGTAC_IDREF = SANGTAC_ID where (NHAPHANBIEN.NHAKHOAHOC_ScientistID = '" + res + "' AND (Hoantatphanbien = 1 OR Xuatban = 1 OR Dadang =1) AND DATEDIFF(YEAR, Thoigianthuchien, CURRENT_TIMESTAMP) <= 3)", conn);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sd.Fill(dt);

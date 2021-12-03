@@ -26,7 +26,7 @@ namespace WindowsForm
         }
         void BindData()
         {
-            SqlCommand cmd = new SqlCommand("SELECT TOP 3 YEAR(thoigianthuchien) AS NamThuchien, COUNT(YEAR(thoigianthuchien)) AS Soluong FROM (((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) JOIN BAIBAO_TACGIASANGTAC ON BAIBAO_TACGIASANGTAC.BAIBAO_NewsID = BAIBAO.NewsID where NHAKHOAHOC_ScientistID = '"+res+"' GROUP BY YEAR(thoigianthuchien) ORDER BY Soluong DESC;", conn);
+            SqlCommand cmd = new SqlCommand("SELECT TOP 3 YEAR(thoigianthuchien) AS NamThuchien, COUNT(YEAR(thoigianthuchien)) AS Soluong FROM (((BAIBAO JOIN BAIPHANBIEN ON BAIBAO_NewsID = NewsID) JOIN THUCHIENPHANBIEN ON BPBID =  BAIPHANBIEN_BPBID) JOIN NHAPHANBIEN ON NHAPHANBIEN_PBID = PBID) where NHAKHOAHOC_ScientistID = '"+res+"' GROUP BY YEAR(thoigianthuchien) ORDER BY Soluong DESC;", conn);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sd.Fill(dt);
